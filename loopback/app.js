@@ -162,31 +162,36 @@ function startPushServer() {
 // Pre-register an application that is ready to be used for testing.
 // You should tweak config options in ./config.js
 
-  var config = require('./config');
+var config = require('./config');
 
-  var demoApp = {
-    id: 'loopback-component-push-app',
-    userId: 'strongloop',
-    name: config.appName,
+var demoApp = {
+  id: 'loopback-component-push-app',
+  userId: 'strongloop',
+  name: config.appName,
 
-    description: 'LoopBack Push Notification Demo Application',
-    pushSettings: {
-      apns: {
-        certData: config.apnsCertData,
-        keyData: config.apnsKeyData,
-        pushOptions: {
-          // Extra options can go here for APN
-        },
-        feedbackOptions: {
-          batchFeedback: true,
-          interval: 300
-        }
+  description: 'LoopBack Push Notification Demo Application',
+  pushSettings: {
+    apns: {
+      pushOptions: {
+        // Extra options can go here for APN
+        port: "2197"
       },
-      gcm: {
-        serverApiKey: config.gcmServerApiKey
-      }
+      feedbackOptions: {
+        batchFeedback: true,
+        interval: 300
+      },
+      token: {
+        keyId: config.apnsTokenKeyId,
+        key: config.apnsTokenKeyPath,
+        teamId: config.apnsTokenTeamId
+      },
+      bundle: config.apnsBundleId
+    },
+    gcm: {
+      serverApiKey: config.gcmServerApiKey
     }
-  };
+  }
+};
 
   updateOrCreateApp(function (err, appModel) {
     if (err) throw err;

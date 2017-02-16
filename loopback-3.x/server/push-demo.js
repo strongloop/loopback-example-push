@@ -43,15 +43,20 @@ module.exports = function (app) {
       description: 'LoopBack Push Notification Demo Application',
       pushSettings: {
         apns: {
-          certData: config.apnsCertData,
-          keyData: config.apnsKeyData,
           pushOptions: {
             // Extra options can go here for APN
+            port: "2197"
           },
           feedbackOptions: {
             batchFeedback: true,
             interval: 300
-          }
+          },
+          token: {
+            keyId: config.apnsTokenKeyId,
+            key: config.apnsTokenKeyPath,
+            teamId: config.apnsTokenTeamId
+          },
+          bundle: config.apnsBundleId
         },
         gcm: {
           serverApiKey: config.gcmServerApiKey

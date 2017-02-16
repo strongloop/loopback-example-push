@@ -1,6 +1,3 @@
-var fs = require('fs');
-var path = require('path');
-
 // Replace with your unique name
 exports.appName = 'LoopBackPushNotificationDemoApplication';
 
@@ -9,15 +6,7 @@ exports.appName = 'LoopBackPushNotificationDemoApplication';
 exports.gcmServerApiKey = 'Your-server-api-key';
 
 // You may want to use your own credentials here
-exports.apnsCertData = readCredentialsFile('apns_cert_dev.pem');
-exports.apnsKeyData =readCredentialsFile('apns_key_dev.pem');
-
-
-//--- Helper functions ---
-
-function readCredentialsFile(name) {
-  return fs.readFileSync(
-    path.resolve(__dirname, 'credentials', name),
-    'UTF-8'
-  );
-}
+exports.apnsTokenKeyPath = './server/private/notification/apns.p8';
+exports.apnsTokenKeyId = 'xxxxxxxx';
+exports.apnsTokenTeamId = 'xxxxxxxx';
+exports.apnsBundleId = 'com.company.app';
