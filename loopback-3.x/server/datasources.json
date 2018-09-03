@@ -3,6 +3,9 @@
     "connector": "mongodb",
     "url": "mongodb://demo:L00pBack@demo.strongloop.com/demo"
   },
+  "mysqlDb": {
+    
+  },
   "push": {
     "name": "push",
     "connector": "loopback-component-push",
