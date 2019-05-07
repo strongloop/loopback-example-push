@@ -1,3 +1,6 @@
+// Copyright IBM Corp. 2016. All Rights Reserved.
+// Node module: loopback-example-push
+
 function ApplicationsController($scope, $http) {
 
   $scope.load = function () {

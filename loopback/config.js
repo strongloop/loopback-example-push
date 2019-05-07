@@ -1,3 +1,6 @@
+// Copyright IBM Corp. 2015. All Rights Reserved.
+// Node module: loopback-example-push
+
 var fs = require('fs');
 var path = require('path');
 

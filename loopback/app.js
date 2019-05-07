@@ -1,3 +1,6 @@
+// Copyright IBM Corp. 2015. All Rights Reserved.
+// Node module: loopback-example-push
+
 var loopback = require('loopback');
 var path = require('path');
 var app = module.exports = loopback();
