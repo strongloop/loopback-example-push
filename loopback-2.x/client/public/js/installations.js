@@ -1,3 +1,6 @@
+// Copyright IBM Corp. 2015. All Rights Reserved.
+// Node module: loopback-example-push
+
 function InstallationsController($scope, $http) {
 
     $http.get('/api/installations').success(function (data) {
